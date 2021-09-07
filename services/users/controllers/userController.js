@@ -10,6 +10,18 @@ module.exports = class Controller {
     const newPassword = cryptPassword(req.body.password);
 
     try {
+      if (!newEmail) {
+        throw {
+          name: 'FieldRequired',
+          message: 'Email field is required',
+        };
+      } else if (!newPassword) {
+        throw {
+          name: 'FieldRequired',
+          message: 'Password field is required',
+        };
+      }
+
       const userIsExist = await User.findOne({ email: newEmail });
       if (userIsExist) {
         throw {
