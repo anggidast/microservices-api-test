@@ -7,21 +7,12 @@ module.exports = class Controller {
   static async register(req, res) {
     const newName = req.body.name;
     const newEmail = req.body.email;
-    const newPassword = cryptPassword(req.body.password);
+    let newPassword = req.body.password;
+    if (newPassword) {
+      newPassword = cryptPassword(req.body.password);
+    }
 
     try {
-      if (!newEmail) {
-        throw {
-          name: 'FieldRequired',
-          message: 'Email field is required',
-        };
-      } else if (!newPassword) {
-        throw {
-          name: 'FieldRequired',
-          message: 'Password field is required',
-        };
-      }
-
       const userIsExist = await User.findOne({ email: newEmail });
       if (userIsExist) {
         throw {

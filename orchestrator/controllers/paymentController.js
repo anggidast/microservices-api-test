@@ -35,7 +35,7 @@ module.exports = class Controller {
         },
       });
       if (response.data) {
-        res.status(201).json(response.data);
+        res.status(200).json(response.data);
       }
     } catch (error) {
       res.status(500).json({ error: error.response.data.error || error.message });
@@ -54,7 +54,7 @@ module.exports = class Controller {
         },
       });
       if (response.data) {
-        res.status(201).json(response.data);
+        res.status(200).json(response.data);
       }
     } catch (error) {
       res.status(500).json({ error: error.response.data.error || error.message });
@@ -78,7 +78,7 @@ module.exports = class Controller {
         },
       });
       if (response.data) {
-        res.status(201).json(response.data);
+        res.status(200).json(response.data);
       }
     } catch (error) {
       res.status(500).json({ error: error.response.data.error || error.message });
@@ -97,7 +97,7 @@ module.exports = class Controller {
         },
       });
       if (response.data) {
-        res.status(201).json(response.data);
+        res.status(200).json(response.data);
       }
     } catch (error) {
       res.status(500).json({ error: error.response.data.error || error.message });
