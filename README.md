@@ -1,5 +1,19 @@
 # Microservices
 
+## Tech Stack
+
+- NodeJS (ExpressJS)
+
+- MongoDB (Mongoose)
+
+- JSON Web Token
+
+- bcryptjs
+
+- Microservices
+
+- Heroku
+
 ## API Gateway/Orchestrator Endpoint
 
 - orchestrator deployment URL: https://dast-ms.herokuapp.com/
